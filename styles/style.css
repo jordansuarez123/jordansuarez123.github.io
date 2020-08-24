@@ -1,0 +1,638 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;500&family=IBM+Plex+Sans:wght@100;600&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+body {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "header" "description" "episodes" "content" "invite" "topics" "news" "footer";
+}
+
+body h1 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 36px;
+}
+
+header {
+  width: 100%;
+  display: block;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+}
+
+header .logo {
+  float: left;
+  padding: 10px 20px;
+}
+
+header .logo img {
+  height: 24px;
+  width: 24px;
+}
+
+header nav ul {
+  float: right;
+  list-style: none;
+  background: #0000ec;
+  width: 320px;
+  height: 240px;
+}
+
+.respmenu a {
+  text-decoration: none;
+  display: block;
+  color: white;
+  padding: 16px 16px 24px;
+  max-width: 200px;
+}
+
+.respmenu input[type="checkbox"],
+.respmenu .fa-bars,
+.respmenu .fa-times {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  right: 20px;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.respmenu .fa-bars,
+.respmenu .fa-times {
+  font-size: 24px;
+  pointer-events: none;
+}
+
+.respmenu input[type="checkbox"] {
+  opacity: 0;
+}
+
+.respmenu {
+  color: #000000;
+  position: relative;
+  min-height: 24px;
+}
+
+.respmenu nav {
+  display: none;
+}
+
+.respmenu input:checked ~ nav {
+  display: block;
+}
+
+.respmenu input:checked ~ .fa-bars {
+  display: none;
+}
+
+.respmenu input:not(:checked) ~ .fa-times {
+  display: none;
+}
+
+.description {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: description;
+}
+
+.description h1 {
+  padding: 29px 11px 0px;
+  color: #060a24;
+}
+
+.description p {
+  padding: 16px 11px 36px;
+  text-align: justify;
+}
+
+.boton {
+  padding: 0px 16px 24px;
+}
+
+.button {
+  font-family: "IBMPlexMono medium";
+  width: 288px;
+  height: 48px;
+  background: #00f3bb;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #0e00ff;
+  background: -webkit-gradient(linear, left top, right top, from(#0e00ff), to(#00e5fe));
+  background: linear-gradient(90deg, #0e00ff 0%, #00e5fe 100%);
+  color: white;
+}
+
+.episodes {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: episodes;
+  position: relative;
+}
+
+.episodes .background_bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(100%, blue), to(#0000a3));
+  background-image: linear-gradient(90deg, blue 100%, #0000a3 100%);
+  -webkit-clip-path: polygon(0 3%, 100% 0%, 100% 97%, 0% 100%);
+          clip-path: polygon(0 3%, 100% 0%, 100% 97%, 0% 100%);
+}
+
+.episodes h1 {
+  color: white;
+  padding: 64px 16px 21px;
+}
+
+.episodes .episodios {
+  display: -ms-grid;
+  display: grid;
+  padding: 11px;
+  -ms-grid-rows: (232px)[4];
+      grid-template-rows: repeat(4, 232px);
+  gap: 11px;
+}
+
+.episodes .episodios h3 {
+  display: none;
+}
+
+.episodes .podcast1 {
+  width: 100%;
+  position: relative;
+}
+
+.episodes .podcast1 iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: transparent;
+  border: 0;
+  overflow: hidden;
+}
+
+.episodes .podcast2 {
+  width: 100%;
+  position: relative;
+}
+
+.episodes .podcast2 iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: transparent;
+  border: 0;
+  overflow: hidden;
+}
+
+.episodes .podcast3 {
+  width: 100%;
+  position: relative;
+}
+
+.episodes .podcast3 iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: transparent;
+  border: 0;
+  overflow: hidden;
+}
+
+.episodes .podcast4 {
+  width: 100%;
+  position: relative;
+}
+
+.episodes .podcast4 iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: transparent;
+  border: 0;
+  overflow: hidden;
+}
+
+.content {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  padding: 48px 11px 54px;
+}
+
+.content .nosotros h1 {
+  padding-bottom: 8px;
+}
+
+.content .nosotros p {
+  margin-bottom: 12px;
+}
+
+.content .phone img {
+  width: 300px;
+  height: 480px;
+}
+
+.invite {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: invite;
+}
+
+.invite h1 {
+  padding: 0px 16px 14px;
+}
+
+.invite .invitados {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+.invite .invitados img {
+  width: 100%;
+  height: auto;
+}
+
+.topics {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: topics;
+  padding: 40px 11px;
+}
+
+.topics h1 {
+  padding-bottom: 50px;
+}
+
+.topics .iconos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 4fr;
+      grid-template-rows: 4fr;
+  grid-gap: 50px;
+}
+
+.topics .icons {
+  font-family: "IBM Plex Sans", semi-bold;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2fr;
+      grid-template-rows: 2fr;
+  grid-gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.news {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: news;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  height: 320px;
+}
+
+.news h1 {
+  padding-bottom: 40px;
+  color: white;
+}
+
+.news .background_bg1 {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(100%, blue), to(#0000a3));
+  background-image: linear-gradient(90deg, blue 100%, #0000a3 100%);
+  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+}
+
+footer {
+  -ms-grid-row: 8;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 120px;
+}
+
+footer .network {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: black;
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 16px;
+    -ms-grid-columns: repeat 3, 1fr;
+        grid-template-columns: repeat 3, 1fr;
+        grid-template-areas: "header header header" "description description description" "episodes episodes episodes" "content content content" "invite invite invite" "topics topics topics" "news news news" "footer footer footer";
+  }
+  body h1 {
+    font-size: 48px;
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    vertical-align: middle;
+    padding: 22px 52px 22px 100px;
+  }
+  header .logo {
+    float: none;
+    padding: 0px;
+  }
+  header .logo img {
+    height: 30px;
+    width: 30px;
+  }
+  header nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    float: none;
+    width: 100%;
+    height: 80px;
+    background: none;
+  }
+  .respmenu a {
+    color: #060A24;
+    max-width: 100%;
+    padding: 0px 48px;
+  }
+  .respmenu .fa-bars .respmenu .fa-times {
+    pointer-events: auto;
+  }
+  .respmenu nav {
+    display: block;
+  }
+  .respmenu input:checked ~ nav {
+    display: none;
+  }
+  .respmenu {
+    color: transparent;
+    position: static;
+  }
+  .description h1 {
+    padding: 100px 200px 0px;
+  }
+  .description p {
+    padding: 10px 200px 56px;
+  }
+  .boton {
+    padding: 0px 200px 10px;
+  }
+  .episodes .background_bg {
+    -webkit-clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);
+            clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);
+  }
+  .episodes h1 {
+    padding: 186px 200px 26px;
+  }
+  .episodes .episodios {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (232px)[2];
+        grid-template-rows: repeat(2, 232px);
+    gap: 72px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    justify-items: start;
+    padding: 0px 100px 64px;
+  }
+  .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    padding: 64px 200px;
+  }
+  .content .nosotros {
+    padding-top: 80px;
+    padding-left: 64px;
+    width: 100%;
+  }
+  .content .nosotros h1 {
+    padding-bottom: 24px;
+  }
+  .content .phone {
+    width: 320px;
+  }
+  .invite .invitados {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+  .invite .invitados img {
+    width: 100%;
+    height: auto;
+  }
+  .topics {
+    padding: 64px 200px 66px;
+  }
+  .topics .iconos {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    grid-gap: 10px;
+  }
+  .news {
+    height: 520px;
+  }
+  .news .background_bg1 {
+    -webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+  }
+  footer {
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding: 36px 100px 31px;
+    height: 95px;
+  }
+  footer .network {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    -ms-grid-columns: repeat 2, 1fr;
+        grid-template-columns: repeat 2, 1fr;
+        grid-template-areas: "header header" "description description" "episodes episodes" "content content" "invite invite" "topics topics" "news news" "footer footer";
+  }
+  .description h1 {
+    padding: 58px 100px 0px;
+  }
+  .description p {
+    padding: 10px 100px 36px;
+  }
+  .boton {
+    padding: 0px 100px 48px;
+  }
+  .episodes .background_bg {
+    -webkit-clip-path: polygon(0 9%, 100% 0%, 100% 91%, 0% 100%);
+            clip-path: polygon(0 9%, 100% 0%, 100% 91%, 0% 100%);
+  }
+  .episodes h1 {
+    padding: 128px 100px 0px;
+  }
+  .episodes .episodios {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (232px)[2];
+        grid-template-rows: repeat(2, 232px);
+    grid-gap: 32px;
+    padding: 32px;
+  }
+  .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    padding: 32px 100px;
+  }
+  .content .nosotros {
+    padding-top: 120px;
+    padding-left: 16px;
+    width: 100%;
+  }
+  .invite h1 {
+    padding: 32px 100px 18px;
+  }
+  .invite .invitados {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+  .topics {
+    padding: 32px 100px 32px;
+  }
+  .topics .iconos {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+  .news {
+    height: 360px;
+  }
+  .news .background_bg1 {
+    -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+  }
+  footer {
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding: 18px 50px 16px;
+    height: 90px;
+  }
+  footer .network {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+/*# sourceMappingURL=style.css.map */

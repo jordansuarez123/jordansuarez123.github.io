@@ -1,0 +1,604 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;500&family=IBM+Plex+Sans:wght@100;600&display=swap");
+
+@mixin podcast {
+  width: 100%;
+  position: relative;
+}
+
+@mixin podcast-iframe {
+  @include podcast;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent;
+    border: 0;
+    overflow: hidden;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+body {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "description"
+    "episodes"
+    "content"
+    "invite"
+    "topics"
+    "news"
+    "footer";
+
+  h1 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 36px;
+  }
+}
+
+header {
+  width: 100%;
+  display: block;
+  grid-area: header;
+
+  .logo {
+    float: left;
+    padding: 10px 20px;
+
+    img {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  nav {
+    ul {
+      float: right;
+      list-style: none;
+      background: #0000ec;
+      width: 320px;
+      height: 240px;
+    }
+  }
+}
+
+.respmenu a {
+  text-decoration: none;
+  display: block;
+  color: white;
+  padding: 16px 16px 24px;
+  max-width: 200px;
+}
+
+.respmenu input[type="checkbox"],
+.respmenu .fa-bars,
+.respmenu .fa-times {
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  right: 20px;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.respmenu .fa-bars,
+.respmenu .fa-times {
+  font-size: 24px;
+  pointer-events: none;
+}
+
+.respmenu input[type="checkbox"] {
+  opacity: 0;
+}
+
+.respmenu {
+  color: #000000;
+  position: relative;
+  min-height: 24px;
+}
+
+.respmenu nav {
+  display: none;
+}
+
+.respmenu input:checked ~ nav {
+  display: block;
+}
+
+.respmenu input:checked ~ .fa-bars {
+  display: none;
+}
+
+.respmenu input:not(:checked) ~ .fa-times {
+  display: none;
+}
+
+.description {
+  grid-area: description;
+
+  h1 {
+    padding: 29px 11px 0px;
+    color: #060a24;
+  }
+
+  p {
+    padding: 16px 11px 36px;
+    text-align: justify;
+  }
+}
+
+.boton {
+  padding: 0px 16px 24px;
+}
+
+.button {
+  font-family: "IBMPlexMono medium";
+  width: 288px;
+  height: 48px;
+  background: #00f3bb;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgb(14, 0, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(14, 0, 255, 1) 0%,
+    rgba(0, 229, 254, 1) 100%
+  );
+  color: white;
+}
+
+.episodes {
+  grid-area: episodes;
+  position: relative;
+
+  .background_bg {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 120%;
+    background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 255, 1) 100%,
+      rgba(0, 0, 163, 1) 100%
+    );
+    clip-path: polygon(0 3%, 100% 0%, 100% 97%, 0% 100%);
+  }
+
+  h1 {
+    color: white;
+    padding: 64px 16px 21px;
+  }
+
+  .episodios {
+    display: grid;
+    padding: 11px;
+    grid-template-rows: repeat(4, 232px);
+    gap: 11px;
+
+    h3 {display: none;}
+  }
+
+  .podcast1 {
+    @include podcast-iframe;  
+  }
+
+  .podcast2 {
+    @include podcast-iframe;  
+  }
+
+  .podcast3 {
+    @include podcast-iframe;  
+  }
+
+  .podcast4 {
+    @include podcast-iframe;  
+  }
+}
+
+.content {
+  grid-area: content;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 48px 11px 54px;
+
+  .nosotros {
+
+  h1 {
+    padding-bottom: 8px;
+   }
+
+   p {
+    margin-bottom: 12px;
+    }
+
+  }
+
+  .phone {
+    img {
+      width: 300px;
+      height: 480px;
+    }
+  }
+}
+
+.invite {
+  grid-area: invite;
+
+  h1 {
+    padding: 0px 16px 14px;
+  }
+
+  .invitados {
+    display: grid;
+    grid-template-rows: 1fr;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+}
+
+.topics {
+  grid-area: topics;
+  padding: 40px 11px;
+
+  h1 {
+    padding-bottom: 50px;
+  }
+
+  .iconos {
+    display: grid;
+    grid-template-rows: 4fr;
+    grid-gap: 50px;
+  }
+
+  .icons {
+    font-family: "IBM Plex Sans", semi-bold;
+    display: grid;
+    grid-template-rows: 2fr;
+    grid-gap: 10px;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+  }
+}
+
+.news {
+  grid-area: news;
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  text-align: center;
+  height: 320px;
+
+  h1 {
+    padding-bottom: 40px;
+    color: white;
+  }
+
+  .background_bg1 {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 255, 1) 100%,
+      rgba(0, 0, 163, 1) 100%
+    );
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+footer { 
+  grid-area: footer;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+
+  .network { 
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    color: black;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 16px;
+    grid-template-columns: repeat (3, 1fr);
+    grid-template-areas:
+      "header header header"
+      "description description description"
+      "episodes episodes episodes"
+      "content content content"
+      "invite invite invite"
+      "topics topics topics"
+      "news news news"
+      "footer footer footer";
+
+    h1 {
+      font-size: 48px;
+    }
+  }
+
+ header {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   vertical-align: middle;
+   padding: 22px 52px 22px 100px;
+   
+    .logo {
+      float: none;
+      padding: 0px;
+
+      img {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    nav {
+      ul {
+        display: flex;
+        flex-flow: row wrap;
+        float: none;
+        width: 100%;
+        height: 80px;
+        background: none;
+      }
+    }
+  } 
+
+  .respmenu a {
+    color: #060A24;
+    max-width: 100%;
+    padding: 0px 48px;
+  }
+
+  .respmenu .fa-bars .respmenu .fa-times {
+    pointer-events: auto;
+  }
+
+  .respmenu nav {
+    display: block;
+  }
+
+  .respmenu input:checked ~ nav {
+    display: none;
+  }
+
+  .respmenu {
+    color: transparent;
+    position: static;
+  }
+
+  .description {
+    h1 {
+      padding: 100px 200px 0px;
+    }
+
+    p {
+      padding: 10px 200px 56px;
+    }
+  }
+
+  .boton {
+    padding: 0px 200px 10px;
+  }
+
+  .episodes {
+    .background_bg {
+    clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);
+    }
+    h1 {
+      padding: 186px 200px 26px;
+    }
+
+    .episodios {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 232px);
+      gap: 72px;
+      justify-content: start;
+      justify-items: start;
+      padding: 0px 100px 64px;
+    }
+  }
+  
+  .content {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 64px 200px;
+
+    .nosotros {
+      padding-top: 80px;
+      padding-left: 64px;
+      width: 100%;
+
+      h1 {
+        padding-bottom: 24px;
+      }
+    
+    }
+
+    .phone {
+      width: 320px;
+    }
+  }
+
+  .invite {
+
+    .invitados {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+.topics {
+  padding: 64px 200px 66px;
+
+  .iconos { 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+    grid-gap: 10px;
+  }
+}
+
+.news {
+  height: 520px;
+
+  .background_bg1  {
+  clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%)
+  }
+}
+
+footer {
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 36px 100px 31px;
+  height: 95px;
+
+  .network {
+    justify-content: space-between;
+  }
+}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+  grid-template-columns: repeat (2, 1fr);
+  grid-template-areas: 
+  "header header"
+  "description description"
+  "episodes episodes"
+  "content content"
+  "invite invite"
+  "topics topics"
+  "news news"
+  "footer footer";
+  }
+
+  .description {
+
+    h1 { 
+    padding: 58px 100px 0px; 
+    }
+
+    p {
+      padding: 10px 100px 36px;
+    }
+  }
+
+  .boton { 
+    padding: 0px 100px 48px;
+  }
+
+  .episodes {
+    .background_bg {
+      clip-path: polygon(0 9%, 100% 0%, 100% 91%, 0% 100%)
+    }
+
+    h1 {
+      padding: 128px 100px 0px;
+    }
+
+    .episodios {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 232px);
+      grid-gap: 32px;
+      padding: 32px;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 32px 100px;
+
+    .nosotros {
+      padding-top: 120px;
+      padding-left: 16px;
+      width: 100%;
+    }
+  }
+
+  .invite {
+
+    h1 {
+      padding: 32px 100px 18px
+    }
+    .invitados { 
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+  .topics {
+    padding: 32px 100px 32px;
+
+    .iconos { 
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+  .news {
+    height: 360px;
+
+    .background_bg1  {
+      clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%)
+      }
+  }
+
+  footer {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 18px 50px 16px;
+    height: 90px;
+
+    .network {
+      justify-content: space-between;
+    }
+  }
+}
